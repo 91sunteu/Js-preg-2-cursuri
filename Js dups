@@ -1,0 +1,16 @@
+// bbab        abc ab
+const countConsistentStrings = (allowed, words) => {
+  const allowedSet = new Set(allowed);
+    //allowedSet = new Set("bbab")
+    //=["b","a"]
+  let cntConsistent = 0;//cnt=0
+    // abc ab
+  outer: for (const word of words) {
+      // a b c        a b
+    for (const char of word) 
+        // 
+        if (!allowedSet.has(char))                     continue outer;
+    cntConsistent++; //1 
+  }
+  return cntConsistent;//1
+};
